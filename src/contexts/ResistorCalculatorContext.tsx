@@ -1,6 +1,6 @@
 import React from "react";
 
-type Field = "first" | "second" | "multiplier" | "error";
+type Field = "first" | "second" | "multiplier" | "tolerance";
 
 type ResistorCalculator = {
   resistance: number[];
@@ -20,7 +20,7 @@ export const useResistorCalculatorContext = () => {
 export const ResistorCalculatorContextProvider = ({
   children,
 }: React.PropsWithChildren) => {
-  const [resistance, setResistance] = React.useState([0, 0, 0, 0]);
+  const [resistance, setResistance] = React.useState([0, 0, 1, 0]);
   function parseResistanceToInt(resistance: number[]) {
     const digits = Number(`${resistance[0]}${resistance[1]}`);
     console.log(digits);
@@ -39,7 +39,7 @@ export const ResistorCalculatorContextProvider = ({
         case "multiplier":
           index = 2;
           break;
-        case "error":
+        case "tolerance":
           index = 3;
           break;
       }

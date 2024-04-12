@@ -1,29 +1,31 @@
 import React from "react";
-import { Text, TouchableOpacity, View } from "react-native";
 import { useResistorCalculatorContext } from "../../contexts/ResistorCalculatorContext";
+import { Button, Container, Text } from "./styles";
 
 type Props = {
   buttons: {
     value: number;
-    color: string;
+    color?: string;
+    background: string;
     text: string;
   }[];
-  field: "first" | "second" | "multiplier" | "error";
+  field: "first" | "second" | "multiplier" | "tolerance";
 };
 
 const ResistorRow = ({ buttons, field }: Props) => {
   const { updateResistance } = useResistorCalculatorContext();
   return (
-    <View>
+    <Container>
       {buttons.map((button) => (
-        <TouchableOpacity
-          key={button.value}
+        <Button
+          key={`${button.value}${button.background}`}
           onPress={() => updateResistance(field, button.value)}
+          backgroud={button.background}
         >
-          <Text>{button.text}</Text>
-        </TouchableOpacity>
+          <Text color={button.color}>{button.text}</Text>
+        </Button>
       ))}
-    </View>
+    </Container>
   );
 };
 
