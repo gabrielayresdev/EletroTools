@@ -1,5 +1,4 @@
 import React from "react";
-import { formatNumber } from "../utils/formatNumber";
 
 type Field = "first" | "second" | "multiplier" | "tolerance";
 

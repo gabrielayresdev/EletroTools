@@ -1,5 +1,5 @@
 import React from "react";
-import ResistorRow from "../ResistorRow/ResistorRow";
+import ResistorRow from "@components/ResistorRow";
 import { Container } from "./styles";
 
 const digits = [

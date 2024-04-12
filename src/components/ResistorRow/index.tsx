@@ -1,5 +1,5 @@
 import React from "react";
-import { useResistorCalculatorContext } from "../../contexts/ResistorCalculatorContext";
+import { useResistorCalculatorContext } from "@contexts/ResistorCalculatorContext";
 import { Button, Container, Text } from "./styles";
 
 type Props = {

@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, Icon, ResistanceValue } from "./styles";
-import { formatNumber } from "../../utils/formatNumber";
-import ResistorIcon from "../../../assets/resistor.png";
+import { formatNumber } from "@utils/formatNumber";
+import ResistorIcon from "@assets/resistor.png";
 
 type Props = {
   resistance: number[];
