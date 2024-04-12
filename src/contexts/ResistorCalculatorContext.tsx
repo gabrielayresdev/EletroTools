@@ -1,10 +1,10 @@
 import React from "react";
+import { formatNumber } from "../utils/formatNumber";
 
 type Field = "first" | "second" | "multiplier" | "tolerance";
 
 type ResistorCalculator = {
   resistance: number[];
-  parseResistanceToInt: (resistance: number[]) => number;
   updateResistance: (field: Field, value: number) => void;
 };
 
@@ -21,11 +21,7 @@ export const ResistorCalculatorContextProvider = ({
   children,
 }: React.PropsWithChildren) => {
   const [resistance, setResistance] = React.useState([0, 0, 1, 0]);
-  function parseResistanceToInt(resistance: number[]) {
-    const digits = Number(`${resistance[0]}${resistance[1]}`);
-    console.log(digits);
-    return digits * resistance[2];
-  }
+
   function updateResistance(field: Field, value: number) {
     setResistance((current) => {
       let index;
@@ -53,7 +49,6 @@ export const ResistorCalculatorContextProvider = ({
     <ResistorCalculatorContext.Provider
       value={{
         resistance,
-        parseResistanceToInt,
         updateResistance,
       }}
     >

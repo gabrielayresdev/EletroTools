@@ -1,15 +1,20 @@
 import React from "react";
-import { Text, View } from "react-native";
 import ResistorTable from "../../components/ResistorTable/ResistorTable";
 import { useResistorCalculatorContext } from "../../contexts/ResistorCalculatorContext";
-import { Container } from "./Styles";
+import { Container, Header } from "./Styles";
+import ResistorIcon from "../../../assets/resistor.png";
+import { Text } from "react-native";
+import ResistanceDisplay from "../../components/ResistanceDisplay/ResistanceDisplay";
 
 const ResistorCalculator = () => {
-  const { resistance, parseResistanceToInt } = useResistorCalculatorContext();
+  const { resistance } = useResistorCalculatorContext();
 
   return (
     <Container>
-      <Text>{parseResistanceToInt(resistance)} Ω</Text>
+      <Header>
+        <Text>Voltar</Text>
+        <ResistanceDisplay resistance={resistance} />
+      </Header>
       <ResistorTable />
     </Container>
   );
