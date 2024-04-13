@@ -16,7 +16,9 @@ const ResistanceDisplay = ({ resistance }: Props) => {
   return (
     <Container>
       <Icon source={ResistorIcon} />
-      <ResistanceValue>{resistanceString} Ω</ResistanceValue>
+      <ResistanceValue>
+        {resistanceString} Ω {resistance[3] ? `± ${resistance[3]}%` : ""}
+      </ResistanceValue>
     </Container>
   );
 };
