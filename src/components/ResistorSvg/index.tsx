@@ -5,10 +5,10 @@ import { Dimensions } from "react-native";
 import P from "@assets/links.jpg";
 
 type Props = {
-  first?: string;
-  second?: string;
-  third?: string;
-  fourth?: string;
+  first: string;
+  second: string;
+  third: string;
+  fourth: string;
   fifht?: string;
 };
 
@@ -42,7 +42,7 @@ const ResistorSvg = (props: Props) => {
         />
         <Path
           d="M322.5 4L300 0v77l22.5-4V4z"
-          fill={props.second ? props.second : "#E0A800"}
+          fill={props.fourth ? props.fourth : "#E0A800"}
         />
         <Path
           d="M58 48.5V28H0v20.5h58zM371.5 28.5V49H430V28.5h-58.5z"
