@@ -1,7 +1,8 @@
 import React from "react";
 import { Path } from "react-native-svg";
-import { Container, SVG } from "./styles";
+import { Container, Img, SVG } from "./styles";
 import { Dimensions } from "react-native";
+import P from "@assets/links.jpg";
 
 type Props = {
   first?: string;
@@ -13,10 +14,14 @@ type Props = {
 
 const ResistorSvg = (props: Props) => {
   const { width } = Dimensions.get("window");
-  console.log(width);
   return (
     <Container>
-      <SVG width={width} viewBox={`4 4 422 69`} fill="none">
+      <SVG
+        width={width}
+        height={(width * 77) / 430}
+        viewBox={`0 0 430 77`}
+        fill="none"
+      >
         <Path
           d="M371.5 28.5L322.5 4v69l49-24V28.5zM300 0l-71 10v57l71 10V0zM153 0h-23l-.5 77 23.5-4V0z"
           fill="#FFDE91"
@@ -44,6 +49,18 @@ const ResistorSvg = (props: Props) => {
           fill="silver"
         />
       </SVG>
+      {/*  <SVG
+        width={width}
+        height={(width * 58) / 430}
+        viewBox="0 0 430 58"
+        fill="none"
+      >
+        <Path
+          d="M117 0v30.5H65.5V58m100-58v58M218 0v18.5h47.5V58m47-58v44h54v14"
+          stroke="#000"
+          strokeWidth={3}
+        />
+      </SVG> */}
     </Container>
   );
 };
