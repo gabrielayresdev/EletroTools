@@ -7,7 +7,7 @@ import { Text } from "react-native";
 import ResistorSvg from "@components/ResistorSvg";
 
 const ResistorCalculator = () => {
-  const { resistance } = useResistorCalculatorContext();
+  const { resistance, colors } = useResistorCalculatorContext();
 
   return (
     <Container>
@@ -15,7 +15,7 @@ const ResistorCalculator = () => {
         <Text>Voltar</Text>
         <ResistanceDisplay resistance={resistance} />
       </Header>
-      <ResistorSvg />
+      <ResistorSvg {...colors} />
       <ResistorTable />
     </Container>
   );
